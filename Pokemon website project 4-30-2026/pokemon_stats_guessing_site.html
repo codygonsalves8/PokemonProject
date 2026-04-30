@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess the Pokemon by Stats</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Header section -->
+  <header>
+    <h1>Guess the Pokemon by Stats</h1>
+  </header>
+
+  <!-- Sticky ribbon navigation -->
+  <nav class="top-ribbon">
+    <img src="images/ball.png" alt="Left Pokeball" class="nav-logo" />
+
+    <div class="nav-links">
+
+      <a href="#" id="homeNav">Home</a>
+
+      <!-- Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="dropdown-title">Game Modes</a>
+
+        <div class="dropdown-menu">
+          <a href="#" id="easyNav">Easy Mode</a>
+          <a href="#" id="hardNav">Hard Mode</a>
+        </div>
+      </div>
+
+      <a href="#" id="rateNav">Rate the Game</a>
+      <a href="#" id="contactNav">Contact</a>
+
+    </div>
+
+    <img src="images/ball2.png" alt="Right Pokeball" class="nav-logo" />
+  </nav>
+
+  <!-- Main content container -->
+  <main>
+
+    <!-- Home screen -->
+    <section id="homeScreen" class="screen">
+
+      <section class="rollover-section">
+        <div class="rollover-container">
+          <img
+            src="images/second.png"
+            alt="Pokemon rollover image"
+            id="rolloverImg"
+            onmouseover="this.src='images/first.png'"
+            onmouseout="this.src='images/second.png'"
+          />
+        </div>
+      </section>
+
+      <div class="home-box">
+        <h2>Guess the Pokemon by Stats</h2>
+        <p>
+          Pick a mode to start playing. Easy mode gives you four choices.
+          Hard mode makes you type the answer instead of four choices.
+        </p>
+
+        <div class="home-mode-buttons">
+          <button id="homeEasyBtn" class="mode-btn">Easy Mode</button>
+          <button id="homeHardBtn" class="mode-btn">Hard Mode</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game screen -->
+    <section id="gameScreen" class="screen hidden">
+
+      <div class="top-bar">
+        <div class="current-mode-box">
+          Mode: <span id="currentModeLabel">Easy</span>
+        </div>
+
+        <div class="score-box">
+          Current Streak: <span id="streak">0</span>
+        </div>
+      </div>
+
+      <div class="stats-grid" id="statsGrid"></div>
+
+      <div id="easyModeArea">
+        <div class="choices-grid" id="choicesContainer"></div>
+      </div>
+
+      <div id="hardModeArea" class="hidden">
+        <div class="hard-box">
+
+          <div class="hint-row">
+            <div id="genHintPill" class="hint-pill hidden"></div>
+            <div id="typeHintPill" class="hint-pill hidden"></div>
+          </div>
+
+          <div class="guess-row">
+            <input
+              type="text"
+              id="guessInput"
+              list="pokemonSuggestions"
+              placeholder="Type the Pokemon name..."
+            />
+            <datalist id="pokemonSuggestions"></datalist>
+            <button id="submitGuessBtn" class="action-btn">Submit Guess</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="resultText" class="result"></div>
+
+      <div class="bottom-buttons">
+        <button id="nextBtn" class="action-btn" disabled>Next Pokemon</button>
+      </div>
+
+    </section>
+
+    <!-- Rate the Game -->
+    <section id="rateScreen" class="screen hidden">
+
+      <div class="home-box">
+        <h2>Rate the Game</h2>
+
+        <p>Let us know how you would rate the game.</p>
+
+        <form id="rateForm">
+
+          <div class="guess-row">
+            <input type="text" id="rateNameInput" placeholder="Your Name" required />
+          </div>
+
+          <div class="guess-row">
+            <select id="ratingInput" required>
+              <option value="">Choose a rating</option>
+              <option value="1">1 - Poor</option>
+              <option value="2">2 - Okay</option>
+              <option value="3">3 - Good</option>
+              <option value="4">4 - Great</option>
+              <option value="5">5 - Excellent</option>
+            </select>
+          </div>
+
+          <div class="guess-row">
+            <button type="submit" class="action-btn">Submit Rating</button>
+          </div>
+
+        </form>
+
+        <p id="rateResult" class="result"></p>
+      </div>
+
+    </section>
+
+    <!-- Contact -->
+    <!-- Contact -->
+    <section id="contactScreen" class="screen hidden">
+
+      <div class="home-box">
+        <h2>Contact</h2>
+
+        <p>This project was created by:</p>
+
+        <p>Cody Gonsalves</p>
+        <p>Samuel Johnson</p>
+        <p>Randall Lewis</p>
+        <p>Micah Odom</p>
+
+        <p>
+          For questions or feedback about this project, contact:
+        </p>
+
+        <p>a00353878@alabama.edu</p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>Pokemon Stats Guessing Game</footer>
+
+  <!-- Pokemon data -->
+  <script src="gen1.js"></script>
+  <script src="gen2.js"></script>
+  <script src="gen3.js"></script>
+  <script src="gen4.js"></script>
+  <script src="gen5.js"></script>
+  <script src="gen6.js"></script>
+  <script src="gen7.js"></script>
+  <script src="gen8.js"></script>
+  <script src="gen9.js"></script>
+
+  <!-- Main JS -->
+  <script src="game.js"></script>
+
+</body>
+</html>
